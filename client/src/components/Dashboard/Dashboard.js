@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosAdd } from "react-icons/io";
+import AppHeader from '../../AppHeader';
 
 import './dashboard.css'
 
@@ -64,9 +65,10 @@ function Dashboard({ addPatient, patients, getSession }) {
   const [add, setAdd] = useState(false);
 
   return (
-    <div>
-      {add ? <AddPatient addPatient={addPatient} /> : <PatientList setAdd={() => setAdd(true)} patients={patients} getSession={getSession} />}
-    </div>
+    <>
+      <AppHeader />
+        {add ? <AddPatient addPatient={addPatient} /> : <PatientList setAdd={() => setAdd(true)} patients={patients} getSession={getSession} />}
+    </>
   )
 }
 
