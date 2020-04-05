@@ -5,7 +5,7 @@ import './dashboard.css'
 
 function Patient({ patient, getSession }) {
   return (
-    <div class="patientName">
+    <div className="patientName">
       <a onClick={() => getSession(patient.id)} >{patient.firstName} {patient.lastInitial}</a>
     </div>
   )
@@ -13,14 +13,14 @@ function Patient({ patient, getSession }) {
 
 function PatientList({ patients, setAdd, getSession }) {
   return (
-    <div class="dashboard">
-      <div class="addButtonContainer">
-        <div class="createSession">Create Session</div>
+    <div className="dashboard">
+      <div className="addButtonContainer">
+        <div className="createSession">Create Session</div>
         <IoIosAdd onClick={setAdd} size={32} />
       </div>
-      <div class="patientContainer">
-        <div class="patientHeader">Activity</div>
-        <div class="patientList">
+      <div className="patientContainer">
+        <div className="patientHeader">Activity</div>
+        <div className="patientList">
           {patients.map((patient) => (<Patient key={patient.id} patient={patient} getSession={getSession} />))}
         </div>
       </div>
@@ -38,8 +38,8 @@ function AddPatient({ addPatient }) {
   }
 
   return (
-    <div class="addPatient">
-      <form class="patientForm" onSubmit={onSubmit} >
+    <div className="addPatient">
+      <form className="patientForm" onSubmit={onSubmit} >
         <input
           id="name"
           type="text"
